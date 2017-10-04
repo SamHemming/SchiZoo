@@ -1396,7 +1396,8 @@ MonoBehaviour:
   - 2;1;Continue;next;
   - 3;1;Continue;next;
   - 0;3;End;end;
-  - 4;1;End;end;
+  - 4;3;End;end;
+  - 4;1;Start;to;0;
 --- !u!114 &333610489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7654,6 +7655,16 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417668722004138, guid: 2bf236dfec92bc241a8779a8d68c82e5,
+        type: 2}
+      propertyPath: name
+      value: Knak
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417668722004138, guid: 2bf236dfec92bc241a8779a8d68c82e5,
+        type: 2}
+      propertyPath: mainObjective
+      value: PickUp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bf236dfec92bc241a8779a8d68c82e5, type: 2}
