@@ -159,7 +159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fdd2e1e1ff5564fa8090bd1f0e73a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
   mainObjective: 
 --- !u!222 &222360895298280060
 CanvasRenderer:
