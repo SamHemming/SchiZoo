@@ -1388,6 +1388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   header: Test Dialog
+  initiative: 1
   sentences:
   - 000000000000000000000000000000000000000000 0000000000000000000000  000000000000
     000000000000000000000000000000000000000000000000000000000000
@@ -5060,6 +5061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   header: Closet
+  initiative: 0
   sentences:
   - This closet seems to be empty.
   - You found Jacket!
@@ -5866,6 +5868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   header: Maija
+  initiative: 1
   sentences:
   - 'Hello, I am Maija.
 
@@ -5875,7 +5878,7 @@ MonoBehaviour:
     for that time.'
   - 'What? YOU want something in return?
 
-    Well I could give you this mysterious bad full of goodies.'
+    Well I could give you this mysterious bag full of goodies.'
   - Alright then, I'll be right back.
   - 'Ahh. That felt good :3 and you didn''t eat any of my dogs?
 
