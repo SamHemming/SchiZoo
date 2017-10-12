@@ -14,6 +14,7 @@ public class Inventory : MonoBehaviour {
 	private Button sortButton;
 	private Text sortButtonText;
 	private string sortType = "A-Z";
+	private GameObject clock;
 
 	public delegate void SlotChangeDelegate();	//delegate for the event
 	public event SlotChangeDelegate SlotChangeEvent;	//event that is called when ItemSlot is selected
@@ -36,6 +37,7 @@ public class Inventory : MonoBehaviour {
 		sortButton = GameObject.Find ("InventorySortButton").GetComponent<Button> ();	//get ref to invSort button
 		sortButton.onClick.AddListener (() => SortInventory ());	//when invSort button is clicked run SortInventory method
 		sortButtonText = sortButton.GetComponentInChildren<Text> ();	//ref to sort buttons text
+		clock = GameObject.Find ("Clock_Text");
 
 		inventoryPanel.SetActive(false);	//toggle inventoryPanel off so that it is hidden
 	}
@@ -46,9 +48,11 @@ public class Inventory : MonoBehaviour {
 	//	Debug.Log ("InventoryToggle Pressed");
 		if (inventoryPanel.activeSelf) {
 			inventoryPanel.SetActive (false);	//set inv off so it gets hidden
+			clock.SetActive(true);
 		}
 		else {
 			inventoryPanel.SetActive (true);
+			clock.SetActive (false);
 			InventoryUpdate ();	//update inventory
 		}
 	}
