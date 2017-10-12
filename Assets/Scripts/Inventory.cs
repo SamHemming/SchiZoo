@@ -15,40 +15,49 @@ public class Inventory : MonoBehaviour {
 	private Text sortButtonText;
 	private string sortType = "A-Z";
 
+	public delegate void SlotChangeDelegate();	//delegate for the event
+	public event SlotChangeDelegate SlotChangeEvent;	//event that is called when ItemSlot is selected
+
+	//------------------------------------------------------------------------
+
+	public void RiseSlotChangeEvent() {	//called by ItemSlot when it is selected/clicked
+		SlotChangeEvent ();	//call all event subs
+	}
+
 	//------------------------------------------------------------------------
 
 	void Start () {
-		gameObject.GetComponent<Button> ().onClick.AddListener(()=>InventoryToggle());
-		inventoryPanel = GameObject.Find ("InventoryPanel");
-		itemPanel = GameObject.Find ("ItemPanel").GetComponent<Transform>();
-		inventoryList = GameObject.FindObjectOfType<GameController> ().player.inventory;
-		itemSlotPrefab = (GameObject)Resources.Load("ItemSlot");
-		itemSlotList = new List<GameObject>();
-		sortButton = GameObject.Find ("InventorySortButton").GetComponent<Button> ();
-		sortButton.onClick.AddListener (() => SortInventory ());
-		sortButtonText = sortButton.GetComponentInChildren<Text> ();
+		gameObject.GetComponent<Button> ().onClick.AddListener(()=>InventoryToggle());	//onClick run InventoryToggle
+		inventoryPanel = GameObject.Find ("InventoryPanel");	
+		itemPanel = GameObject.Find ("ItemPanel").GetComponent<Transform>();	//get reference to itemPanel for parenting ItemSlots
+		inventoryList = GameObject.FindObjectOfType<GameController> ().player.inventory;	//get ref to players inv
+		itemSlotPrefab = (GameObject)Resources.Load("ItemSlot");	//get ref to ItemSlots prefab
+		itemSlotList = new List<GameObject>();	//make new list to store itemSlot buttons
+		sortButton = GameObject.Find ("InventorySortButton").GetComponent<Button> ();	//get ref to invSort button
+		sortButton.onClick.AddListener (() => SortInventory ());	//when invSort button is clicked run SortInventory method
+		sortButtonText = sortButton.GetComponentInChildren<Text> ();	//ref to sort buttons text
 
-		inventoryPanel.SetActive(false);
+		inventoryPanel.SetActive(false);	//toggle inventoryPanel off so that it is hidden
 	}
 
 	//------------------------------------------------------------------------
 
-	private void InventoryToggle() {
-		//Debug.Log ("InventoryToggle Pressed");
+	private void InventoryToggle() {	//toggle inventory on/off
+	//	Debug.Log ("InventoryToggle Pressed");
 		if (inventoryPanel.activeSelf) {
-			inventoryPanel.SetActive (false);
+			inventoryPanel.SetActive (false);	//set inv off so it gets hidden
 		}
 		else {
 			inventoryPanel.SetActive (true);
-			InventoryUpdate ();
+			InventoryUpdate ();	//update inventory
 		}
 	}
 
 	//------------------------------------------------------------------------
 
-	private void InventoryUpdate() {
+	private void InventoryUpdate() {	//delete old buttons and make new once from the inventory
 		foreach (GameObject item in itemSlotList) {	//remove the old itemSlot objects
-			Destroy (item);
+			Destroy (item);	//destroy item object
 		}
 		itemSlotList.Clear ();	//clear the list
 
@@ -61,35 +70,37 @@ public class Inventory : MonoBehaviour {
 
 	//------------------------------------------------------------------------
 
-	private void SortInventory() {
+	private void SortInventory() {	//sort inventory by given type
+	
+		sortButtonText.text = sortType;	//Update sort buttons text
+
 		switch (sortType) {
 
-		case "A-Z":
-			//inventoryList.Sort ();
-			sortType = "Z-A";
+		case "Z-A":
+			inventoryList.Sort (((x, y) => x.name.CompareTo (y.name)));	//sort inventory list by compareing X and Y, where x is first items name and y is next items name
+			sortType = "A-Z";	//set sort type for next run
 			break;
 
-		case"Z-A":
+		case"A-Z":
+			inventoryList.Sort (((x, y) => y.name.CompareTo (x.name)));
 			sortType = "type";
 			break;
 
 		case "type":
+			inventoryList.Sort (((x, y) => x.type.CompareTo (y.type)));
 			sortType = "!type";
 			break;
 
 		case "!type":
-			sortType = "A-Z";
+			inventoryList.Sort (((x, y) => y.type.CompareTo (x.type)));
+			sortType = "Z-A";
 			break;
 
 		default:
 			Debug.Log ("SortInventory default case.");
 			break;
 		}
-		sortButtonText.text = sortType;	//Update sort buttons text
-	}
-
-	// Update is called once per frame
-	void Update () {
-		
+	//	GameObject.FindObjectOfType<GameController> ().player.Inventory ("Print");
+		InventoryUpdate ();	//update inv to give buttons new positions
 	}
 }

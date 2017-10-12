@@ -230,12 +230,12 @@ Prefab:
     - target: {fileID: 224704978937166862, guid: 2bf236dfec92bc241a8779a8d68c82e5,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -3
+      value: -226.8
       objectReference: {fileID: 0}
     - target: {fileID: 224704978937166862, guid: 2bf236dfec92bc241a8779a8d68c82e5,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 82
+      value: 112.1
       objectReference: {fileID: 0}
     - target: {fileID: 224704978937166862, guid: 2bf236dfec92bc241a8779a8d68c82e5,
         type: 2}
@@ -295,7 +295,16 @@ Prefab:
     - target: {fileID: 114417668722004138, guid: 2bf236dfec92bc241a8779a8d68c82e5,
         type: 2}
       propertyPath: description
-      value: toilet key
+      value: toilet key. used to open toilet door :D
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417668722004138, guid: 2bf236dfec92bc241a8779a8d68c82e5,
+        type: 2}
+      propertyPath: type
+      value: Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485005664979782, guid: 2bf236dfec92bc241a8779a8d68c82e5, type: 2}
+      propertyPath: m_Name
+      value: Toilet Key
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bf236dfec92bc241a8779a8d68c82e5, type: 2}
@@ -1126,8 +1135,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.64, y: 0.83}
-  m_SizeDelta: {x: 383.96, y: 64.58}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 230, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &306226077
 MonoBehaviour:
@@ -1152,14 +1161,14 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 26
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 89
     m_Alignment: 4
-    m_AlignByGeometry: 1
+    m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
 --- !u!222 &306226078
@@ -2243,8 +2252,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.0201, y: 134.32}
-  m_SizeDelta: {x: -398.82, y: -297.4}
+  m_AnchoredPosition: {x: 0, y: 132.5}
+  m_SizeDelta: {x: -400, y: -295}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &418645696
 MonoBehaviour:
@@ -5341,7 +5350,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: A-Z
 --- !u!222 &1069391986
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6494,12 +6503,12 @@ Prefab:
     - target: {fileID: 224704978937166862, guid: 2bf236dfec92bc241a8779a8d68c82e5,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -193.1
+      value: 106.8
       objectReference: {fileID: 0}
     - target: {fileID: 224704978937166862, guid: 2bf236dfec92bc241a8779a8d68c82e5,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 108.6
+      value: -106.7
       objectReference: {fileID: 0}
     - target: {fileID: 224704978937166862, guid: 2bf236dfec92bc241a8779a8d68c82e5,
         type: 2}
@@ -6558,12 +6567,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1485005664979782, guid: 2bf236dfec92bc241a8779a8d68c82e5, type: 2}
       propertyPath: m_Name
-      value: Item (1)
+      value: Bedroom Key
       objectReference: {fileID: 0}
     - target: {fileID: 114417668722004138, guid: 2bf236dfec92bc241a8779a8d68c82e5,
         type: 2}
       propertyPath: description
       value: bedroom key
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417668722004138, guid: 2bf236dfec92bc241a8779a8d68c82e5,
+        type: 2}
+      propertyPath: type
+      value: Key
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bf236dfec92bc241a8779a8d68c82e5, type: 2}
@@ -7958,12 +7972,12 @@ Prefab:
     - target: {fileID: 224704978937166862, guid: 2bf236dfec92bc241a8779a8d68c82e5,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 198.3
+      value: -211.2
       objectReference: {fileID: 0}
     - target: {fileID: 224704978937166862, guid: 2bf236dfec92bc241a8779a8d68c82e5,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 120.3
+      value: -118.8
       objectReference: {fileID: 0}
     - target: {fileID: 224704978937166862, guid: 2bf236dfec92bc241a8779a8d68c82e5,
         type: 2}
@@ -8022,12 +8036,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1485005664979782, guid: 2bf236dfec92bc241a8779a8d68c82e5, type: 2}
       propertyPath: m_Name
-      value: Item (2)
+      value: House Key
       objectReference: {fileID: 0}
     - target: {fileID: 114417668722004138, guid: 2bf236dfec92bc241a8779a8d68c82e5,
         type: 2}
       propertyPath: description
-      value: out door key
+      value: outdoor key
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417668722004138, guid: 2bf236dfec92bc241a8779a8d68c82e5,
+        type: 2}
+      propertyPath: type
+      value: Key
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bf236dfec92bc241a8779a8d68c82e5, type: 2}
